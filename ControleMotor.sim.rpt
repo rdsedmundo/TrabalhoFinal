@@ -1,0 +1,370 @@
+Simulator report for ControleMotor
+Thu Nov 14 15:32:34 2013
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------+
+; Simulator Summary                           ;
++-----------------------------+---------------+
+; Type                        ; Value         ;
++-----------------------------+---------------+
+; Simulation Start Time       ; 0 ps          ;
+; Simulation End Time         ; 1.0 us        ;
+; Simulation Netlist Size     ; 68 nodes      ;
+; Simulation Coverage         ;      21.19 %  ;
+; Total Number of Transitions ; 888           ;
+; Simulation Breakpoints      ; 0             ;
+; Family                      ; MAX II        ;
+; Device                      ; EPM1270F256C5 ;
++-----------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Option                                                                                     ; Setting       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Simulation mode                                                                            ; Timing        ; Timing        ;
+; Start time                                                                                 ; 0 ns          ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF          ;               ;
+; Vector input source                                                                        ; Simulacao.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On            ; On            ;
+; Check outputs                                                                              ; Off           ; Off           ;
+; Report simulation coverage                                                                 ; On            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On            ; On            ;
+; Display missing 1-value coverage report                                                    ; On            ; On            ;
+; Display missing 0-value coverage report                                                    ; On            ; On            ;
+; Detect setup and hold time violations                                                      ; Off           ; Off           ;
+; Detect glitches                                                                            ; Off           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off           ; Off           ;
+; Generate Signal Activity File                                                              ; Off           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off           ; Off           ;
+; Group bus channels in simulation results                                                   ; Off           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      21.19 % ;
+; Total nodes checked                                 ; 68           ;
+; Total output ports checked                          ; 118          ;
+; Total output ports with complete 1/0-value coverage ; 25           ;
+; Total output ports with no 1/0-value coverage       ; 89           ;
+; Total output ports with no 1-value coverage         ; 90           ;
+; Total output ports with no 0-value coverage         ; 92           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                     ;
++------------------------------------+-----------------------------------------+------------------+
+; Node Name                          ; Output Port Name                        ; Output Port Type ;
++------------------------------------+-----------------------------------------+------------------+
+; |TrabalhoFinal|PWM:m4|Add0~25      ; |TrabalhoFinal|PWM:m4|Add0~25           ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~25      ; |TrabalhoFinal|PWM:m4|Add0~27COUT1_162  ; cout1            ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[4] ; |TrabalhoFinal|PWM:m4|COUNT_aux[4]      ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[3] ; |TrabalhoFinal|PWM:m4|COUNT_aux[3]      ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[2] ; |TrabalhoFinal|PWM:m4|COUNT_aux[2]      ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[5] ; |TrabalhoFinal|PWM:m4|Equal0~6          ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[5] ; |TrabalhoFinal|PWM:m4|COUNT_aux[5]      ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[0] ; |TrabalhoFinal|PWM:m4|COUNT_aux[0]      ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[1] ; |TrabalhoFinal|PWM:m4|Equal0~7          ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[1] ; |TrabalhoFinal|PWM:m4|COUNT_aux[1]      ; regout           ;
+; |TrabalhoFinal|PWM:m4|Add0~100     ; |TrabalhoFinal|PWM:m4|Add0~100          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~100     ; |TrabalhoFinal|PWM:m4|Add0~102COUT1_160 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~105     ; |TrabalhoFinal|PWM:m4|Add0~105          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~105     ; |TrabalhoFinal|PWM:m4|Add0~107COUT1_158 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~110     ; |TrabalhoFinal|PWM:m4|Add0~110          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~110     ; |TrabalhoFinal|PWM:m4|Add0~112COUT1_156 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~115     ; |TrabalhoFinal|PWM:m4|Add0~115          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~115     ; |TrabalhoFinal|PWM:m4|Add0~117          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~120     ; |TrabalhoFinal|PWM:m4|Add0~120          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~120     ; |TrabalhoFinal|PWM:m4|Add0~122          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~120     ; |TrabalhoFinal|PWM:m4|Add0~122COUT1_154 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~125     ; |TrabalhoFinal|PWM:m4|Add0~125          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~125     ; |TrabalhoFinal|PWM:m4|Add0~127          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~125     ; |TrabalhoFinal|PWM:m4|Add0~127COUT1_152 ; cout1            ;
+; |TrabalhoFinal|sysClock            ; |TrabalhoFinal|sysClock~corein          ; combout          ;
++------------------------------------+-----------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                        ;
++-------------------------------------+----------------------------------------+------------------+
+; Node Name                           ; Output Port Name                       ; Output Port Type ;
++-------------------------------------+----------------------------------------+------------------+
+; |TrabalhoFinal|PWM:m4|COUNT_aux[17] ; |TrabalhoFinal|PWM:m4|COUNT_aux[17]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[18] ; |TrabalhoFinal|PWM:m4|Equal0~0         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[18] ; |TrabalhoFinal|PWM:m4|COUNT_aux[18]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[16] ; |TrabalhoFinal|PWM:m4|COUNT_aux[16]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[15] ; |TrabalhoFinal|PWM:m4|COUNT_aux[15]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[14] ; |TrabalhoFinal|PWM:m4|Equal0~1         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[14] ; |TrabalhoFinal|PWM:m4|COUNT_aux[14]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[7]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[7]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[8]  ; |TrabalhoFinal|PWM:m4|LessThan0~0      ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[8]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[8]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[13] ; |TrabalhoFinal|PWM:m4|COUNT_aux[13]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[12] ; |TrabalhoFinal|PWM:m4|COUNT_aux[12]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[11] ; |TrabalhoFinal|PWM:m4|COUNT_aux[11]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[10] ; |TrabalhoFinal|PWM:m4|COUNT_aux[10]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~2      ; |TrabalhoFinal|PWM:m4|Equal0~2         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[24] ; |TrabalhoFinal|PWM:m4|COUNT_aux[24]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[23] ; |TrabalhoFinal|PWM:m4|COUNT_aux[23]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[22] ; |TrabalhoFinal|PWM:m4|COUNT_aux[22]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[21] ; |TrabalhoFinal|PWM:m4|COUNT_aux[21]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~3      ; |TrabalhoFinal|PWM:m4|Equal0~3         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[20] ; |TrabalhoFinal|PWM:m4|COUNT_aux[20]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[19] ; |TrabalhoFinal|PWM:m4|COUNT_aux[19]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[25] ; |TrabalhoFinal|PWM:m4|COUNT_aux[25]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~4      ; |TrabalhoFinal|PWM:m4|Equal0~4         ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~0        ; |TrabalhoFinal|PWM:m4|Add0~0           ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~0        ; |TrabalhoFinal|PWM:m4|Add0~2           ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~0        ; |TrabalhoFinal|PWM:m4|Add0~2COUT1_180  ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~5        ; |TrabalhoFinal|PWM:m4|Add0~5           ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~5        ; |TrabalhoFinal|PWM:m4|Add0~7           ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~10       ; |TrabalhoFinal|PWM:m4|Add0~10          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~10       ; |TrabalhoFinal|PWM:m4|Add0~12          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~10       ; |TrabalhoFinal|PWM:m4|Add0~12COUT1_174 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~15       ; |TrabalhoFinal|PWM:m4|Add0~15          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~15       ; |TrabalhoFinal|PWM:m4|Add0~17          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~15       ; |TrabalhoFinal|PWM:m4|Add0~17COUT1_178 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~20       ; |TrabalhoFinal|PWM:m4|Add0~20          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~20       ; |TrabalhoFinal|PWM:m4|Add0~22          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~20       ; |TrabalhoFinal|PWM:m4|Add0~22COUT1_176 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~25       ; |TrabalhoFinal|PWM:m4|Add0~27          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[9]  ; |TrabalhoFinal|PWM:m4|Equal0~5         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[9]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[9]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~8      ; |TrabalhoFinal|PWM:m4|Equal0~8         ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~30       ; |TrabalhoFinal|PWM:m4|Add0~30          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~30       ; |TrabalhoFinal|PWM:m4|Add0~32          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~30       ; |TrabalhoFinal|PWM:m4|Add0~32COUT1_166 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~35       ; |TrabalhoFinal|PWM:m4|Add0~35          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~35       ; |TrabalhoFinal|PWM:m4|Add0~37          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~35       ; |TrabalhoFinal|PWM:m4|Add0~37COUT1_164 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~40       ; |TrabalhoFinal|PWM:m4|Add0~40          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~40       ; |TrabalhoFinal|PWM:m4|Add0~42          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~45       ; |TrabalhoFinal|PWM:m4|Add0~45          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~45       ; |TrabalhoFinal|PWM:m4|Add0~47          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~45       ; |TrabalhoFinal|PWM:m4|Add0~47COUT1_172 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~50       ; |TrabalhoFinal|PWM:m4|Add0~50          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~50       ; |TrabalhoFinal|PWM:m4|Add0~52          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~55       ; |TrabalhoFinal|PWM:m4|Add0~55          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~55       ; |TrabalhoFinal|PWM:m4|Add0~57          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~55       ; |TrabalhoFinal|PWM:m4|Add0~57COUT1_170 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~60       ; |TrabalhoFinal|PWM:m4|Add0~60          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~60       ; |TrabalhoFinal|PWM:m4|Add0~62          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~60       ; |TrabalhoFinal|PWM:m4|Add0~62COUT1_168 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~65       ; |TrabalhoFinal|PWM:m4|Add0~65          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~65       ; |TrabalhoFinal|PWM:m4|Add0~67          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~65       ; |TrabalhoFinal|PWM:m4|Add0~67COUT1_190 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~70       ; |TrabalhoFinal|PWM:m4|Add0~70          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~70       ; |TrabalhoFinal|PWM:m4|Add0~72          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~70       ; |TrabalhoFinal|PWM:m4|Add0~72COUT1_188 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~75       ; |TrabalhoFinal|PWM:m4|Add0~75          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~75       ; |TrabalhoFinal|PWM:m4|Add0~77          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~80       ; |TrabalhoFinal|PWM:m4|Add0~80          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~80       ; |TrabalhoFinal|PWM:m4|Add0~82          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~80       ; |TrabalhoFinal|PWM:m4|Add0~82COUT1_186 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~85       ; |TrabalhoFinal|PWM:m4|Add0~85          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~85       ; |TrabalhoFinal|PWM:m4|Add0~87          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~85       ; |TrabalhoFinal|PWM:m4|Add0~87COUT1_184 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~90       ; |TrabalhoFinal|PWM:m4|Add0~90          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~90       ; |TrabalhoFinal|PWM:m4|Add0~92          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~90       ; |TrabalhoFinal|PWM:m4|Add0~92COUT1_182 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~95       ; |TrabalhoFinal|PWM:m4|Add0~95          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~100      ; |TrabalhoFinal|PWM:m4|Add0~102         ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~105      ; |TrabalhoFinal|PWM:m4|Add0~107         ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~110      ; |TrabalhoFinal|PWM:m4|Add0~112         ; cout0            ;
+; |TrabalhoFinal|LED_Baixo            ; |TrabalhoFinal|LED_Baixo               ; padio            ;
+; |TrabalhoFinal|LED_Medio            ; |TrabalhoFinal|LED_Medio               ; padio            ;
+; |TrabalhoFinal|LED_Alto             ; |TrabalhoFinal|LED_Alto                ; padio            ;
+; |TrabalhoFinal|ADC_CLK              ; |TrabalhoFinal|ADC_CLK                 ; padio            ;
+; |TrabalhoFinal|ADC_CSN              ; |TrabalhoFinal|ADC_CSN                 ; padio            ;
+; |TrabalhoFinal|ADC_DIN              ; |TrabalhoFinal|ADC_DIN                 ; padio            ;
+; |TrabalhoFinal|ADC_SSTRB            ; |TrabalhoFinal|ADC_SSTRB               ; padio            ;
+; |TrabalhoFinal|ADC_SHDN             ; |TrabalhoFinal|ADC_SHDN                ; padio            ;
++-------------------------------------+----------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                        ;
++-------------------------------------+----------------------------------------+------------------+
+; Node Name                           ; Output Port Name                       ; Output Port Type ;
++-------------------------------------+----------------------------------------+------------------+
+; |TrabalhoFinal|PWM:m4|Saida         ; |TrabalhoFinal|PWM:m4|Saida            ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[17] ; |TrabalhoFinal|PWM:m4|COUNT_aux[17]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[18] ; |TrabalhoFinal|PWM:m4|Equal0~0         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[18] ; |TrabalhoFinal|PWM:m4|COUNT_aux[18]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[16] ; |TrabalhoFinal|PWM:m4|COUNT_aux[16]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[15] ; |TrabalhoFinal|PWM:m4|COUNT_aux[15]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[14] ; |TrabalhoFinal|PWM:m4|Equal0~1         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[14] ; |TrabalhoFinal|PWM:m4|COUNT_aux[14]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[6]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[6]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[7]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[7]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[8]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[8]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[13] ; |TrabalhoFinal|PWM:m4|COUNT_aux[13]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[12] ; |TrabalhoFinal|PWM:m4|COUNT_aux[12]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[11] ; |TrabalhoFinal|PWM:m4|COUNT_aux[11]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[10] ; |TrabalhoFinal|PWM:m4|COUNT_aux[10]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~2      ; |TrabalhoFinal|PWM:m4|Equal0~2         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[24] ; |TrabalhoFinal|PWM:m4|COUNT_aux[24]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[23] ; |TrabalhoFinal|PWM:m4|COUNT_aux[23]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[22] ; |TrabalhoFinal|PWM:m4|COUNT_aux[22]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[21] ; |TrabalhoFinal|PWM:m4|COUNT_aux[21]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~3      ; |TrabalhoFinal|PWM:m4|Equal0~3         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[20] ; |TrabalhoFinal|PWM:m4|COUNT_aux[20]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[19] ; |TrabalhoFinal|PWM:m4|COUNT_aux[19]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[25] ; |TrabalhoFinal|PWM:m4|COUNT_aux[25]    ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~4      ; |TrabalhoFinal|PWM:m4|Equal0~4         ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~0        ; |TrabalhoFinal|PWM:m4|Add0~0           ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~0        ; |TrabalhoFinal|PWM:m4|Add0~2           ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~0        ; |TrabalhoFinal|PWM:m4|Add0~2COUT1_180  ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~5        ; |TrabalhoFinal|PWM:m4|Add0~5           ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~5        ; |TrabalhoFinal|PWM:m4|Add0~7           ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~10       ; |TrabalhoFinal|PWM:m4|Add0~10          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~10       ; |TrabalhoFinal|PWM:m4|Add0~12          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~10       ; |TrabalhoFinal|PWM:m4|Add0~12COUT1_174 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~15       ; |TrabalhoFinal|PWM:m4|Add0~15          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~15       ; |TrabalhoFinal|PWM:m4|Add0~17          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~15       ; |TrabalhoFinal|PWM:m4|Add0~17COUT1_178 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~20       ; |TrabalhoFinal|PWM:m4|Add0~20          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~20       ; |TrabalhoFinal|PWM:m4|Add0~22          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~20       ; |TrabalhoFinal|PWM:m4|Add0~22COUT1_176 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~25       ; |TrabalhoFinal|PWM:m4|Add0~27          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[9]  ; |TrabalhoFinal|PWM:m4|Equal0~5         ; combout          ;
+; |TrabalhoFinal|PWM:m4|COUNT_aux[9]  ; |TrabalhoFinal|PWM:m4|COUNT_aux[9]     ; regout           ;
+; |TrabalhoFinal|PWM:m4|Equal0~8      ; |TrabalhoFinal|PWM:m4|Equal0~8         ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~30       ; |TrabalhoFinal|PWM:m4|Add0~30          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~30       ; |TrabalhoFinal|PWM:m4|Add0~32          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~30       ; |TrabalhoFinal|PWM:m4|Add0~32COUT1_166 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~35       ; |TrabalhoFinal|PWM:m4|Add0~35          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~35       ; |TrabalhoFinal|PWM:m4|Add0~37          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~35       ; |TrabalhoFinal|PWM:m4|Add0~37COUT1_164 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~40       ; |TrabalhoFinal|PWM:m4|Add0~40          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~40       ; |TrabalhoFinal|PWM:m4|Add0~42          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~45       ; |TrabalhoFinal|PWM:m4|Add0~45          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~45       ; |TrabalhoFinal|PWM:m4|Add0~47          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~45       ; |TrabalhoFinal|PWM:m4|Add0~47COUT1_172 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~50       ; |TrabalhoFinal|PWM:m4|Add0~50          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~50       ; |TrabalhoFinal|PWM:m4|Add0~52          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~55       ; |TrabalhoFinal|PWM:m4|Add0~55          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~55       ; |TrabalhoFinal|PWM:m4|Add0~57          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~55       ; |TrabalhoFinal|PWM:m4|Add0~57COUT1_170 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~60       ; |TrabalhoFinal|PWM:m4|Add0~60          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~60       ; |TrabalhoFinal|PWM:m4|Add0~62          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~60       ; |TrabalhoFinal|PWM:m4|Add0~62COUT1_168 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~65       ; |TrabalhoFinal|PWM:m4|Add0~65          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~65       ; |TrabalhoFinal|PWM:m4|Add0~67          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~65       ; |TrabalhoFinal|PWM:m4|Add0~67COUT1_190 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~70       ; |TrabalhoFinal|PWM:m4|Add0~70          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~70       ; |TrabalhoFinal|PWM:m4|Add0~72          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~70       ; |TrabalhoFinal|PWM:m4|Add0~72COUT1_188 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~75       ; |TrabalhoFinal|PWM:m4|Add0~75          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~75       ; |TrabalhoFinal|PWM:m4|Add0~77          ; cout             ;
+; |TrabalhoFinal|PWM:m4|Add0~80       ; |TrabalhoFinal|PWM:m4|Add0~80          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~80       ; |TrabalhoFinal|PWM:m4|Add0~82          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~80       ; |TrabalhoFinal|PWM:m4|Add0~82COUT1_186 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~85       ; |TrabalhoFinal|PWM:m4|Add0~85          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~85       ; |TrabalhoFinal|PWM:m4|Add0~87          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~85       ; |TrabalhoFinal|PWM:m4|Add0~87COUT1_184 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~90       ; |TrabalhoFinal|PWM:m4|Add0~90          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~90       ; |TrabalhoFinal|PWM:m4|Add0~92          ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~90       ; |TrabalhoFinal|PWM:m4|Add0~92COUT1_182 ; cout1            ;
+; |TrabalhoFinal|PWM:m4|Add0~95       ; |TrabalhoFinal|PWM:m4|Add0~95          ; combout          ;
+; |TrabalhoFinal|PWM:m4|Add0~100      ; |TrabalhoFinal|PWM:m4|Add0~102         ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~105      ; |TrabalhoFinal|PWM:m4|Add0~107         ; cout0            ;
+; |TrabalhoFinal|PWM:m4|Add0~110      ; |TrabalhoFinal|PWM:m4|Add0~112         ; cout0            ;
+; |TrabalhoFinal|LED_Baixo            ; |TrabalhoFinal|LED_Baixo               ; padio            ;
+; |TrabalhoFinal|LED_Medio            ; |TrabalhoFinal|LED_Medio               ; padio            ;
+; |TrabalhoFinal|LED_Alto             ; |TrabalhoFinal|LED_Alto                ; padio            ;
+; |TrabalhoFinal|Saida                ; |TrabalhoFinal|Saida                   ; padio            ;
+; |TrabalhoFinal|ADC_CLK              ; |TrabalhoFinal|ADC_CLK                 ; padio            ;
+; |TrabalhoFinal|ADC_CSN              ; |TrabalhoFinal|ADC_CSN                 ; padio            ;
+; |TrabalhoFinal|ADC_DIN              ; |TrabalhoFinal|ADC_DIN                 ; padio            ;
+; |TrabalhoFinal|ADC_SSTRB            ; |TrabalhoFinal|ADC_SSTRB               ; padio            ;
+; |TrabalhoFinal|ADC_SHDN             ; |TrabalhoFinal|ADC_SHDN                ; padio            ;
++-------------------------------------+----------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Thu Nov 14 15:32:34 2013
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off TrabalhoFinal -c ControleMotor
+Info: Using vector source file "C:/altera/91/quartus/TrabalhoFinal/Simulacao.vwf"
+Warning: Can't find signal in vector source file for input pin "|TrabalhoFinal|ADC_DOUT"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      21.19 %
+Info: Number of transitions in simulation is 888
+Info: Quartus II Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 151 megabytes
+    Info: Processing ended: Thu Nov 14 15:32:34 2013
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

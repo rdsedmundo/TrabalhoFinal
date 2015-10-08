@@ -1,0 +1,300 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+45
+3273
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+FPGA_ADCMAX1111
+# storage
+db|ControleMotor.(3).cnf
+db|ControleMotor.(3).cnf
+# architecture
+A:arch_fpga_adcmax1111
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+fpga_adcmax1111.vhdl
+875f4278e1d5386ce498cf1dd7bd91b5
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+FPGA_ADCMAX1111:m2
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+CLOCK_GENERATOR
+# storage
+db|ControleMotor.(4).cnf
+db|ControleMotor.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+clock_generator.vhdl
+b3198aaaf118615dfa1cd86dc6e2dd73
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+PWM
+# storage
+db|ControleMotor.(1).cnf
+db|ControleMotor.(1).cnf
+# architecture
+A:structural
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+pwm.vhd
+bdc057c270446a078776ad8a90bcb6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(periodo)
+26 downto 0
+PARAMETER_STRING
+USR
+ constraint(duty_cicle)
+25 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+PWM:m1
+PWM:m5
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+ControleMotor
+# storage
+db|ControleMotor.(2).cnf
+db|ControleMotor.(2).cnf
+# architecture
+A:structural
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+controlemotor.vhd
+7dd5196638f9dc3d19ab60e17a1f5e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(temperatura)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ControleMotor:m3
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+PulseProcessor
+# storage
+db|ControleMotor.(5).cnf
+db|ControleMotor.(5).cnf
+# architecture
+A:structural
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+pulseprocessor.vhd
+bb80b628e5659c1a55e58f9fde3b5bd
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(duty)
+25 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+PulseProcessor:m4
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+ConversorTemperatura
+# storage
+db|ControleMotor.(6).cnf
+db|ControleMotor.(6).cnf
+# architecture
+A:data_flow
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+conversortemperatura.vhd
+b1c8dfd8fc4166adea9bd2241d378cc9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(xdados)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(xtemp)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+TrabalhoFinal
+# storage
+db|ControleMotor.(0).cnf
+db|ControleMotor.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+trabalhofinal.vhd
+fbc061aa3db343b9dd671f7c512ec46e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# complete
+

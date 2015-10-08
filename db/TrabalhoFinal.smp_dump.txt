@@ -1,0 +1,7 @@
+
+State Machine - |TrabalhoFinal|FPGA_ADCMAX1111:m2|estado
+Name estado.finished estado.transfering estado.start estado.idle 
+estado.idle 0 0 0 0 
+estado.start 0 0 1 1 
+estado.transfering 0 1 0 1 
+estado.finished 1 0 0 1 

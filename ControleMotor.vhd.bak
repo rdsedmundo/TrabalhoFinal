@@ -1,0 +1,47 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL; 
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+ENTITY ControleMotor IS
+	PORT(
+		Temperatura : IN STD_LOGIC_VECTOR(7 DOWNTO 0); -- Indica o binário equivalente da temperatura atual
+		Pronto 		: IN STD_LOGIC;
+		sysClock 	: IN STD_LOGIC; -- Clock de 66.66MHz
+		LED_Baixo 	: OUT STD_LOGIC; -- Indica que a intensidade da temperatura está baixa
+		LED_Medio 	: OUT STD_LOGIC; -- Indica que a intensdidade da temperatura está média
+		LED_Alto  	: OUT STD_LOGIC); -- Indica que a intensidade da temperatura está alta
+END ControleMotor;
+
+ARCHITECTURE structural OF ControleMotor IS
+	CONSTANT TEMPERATURA_BAIXA : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00011001"; -- 25ºC
+	CONSTANT TEMPERATURA_MEDIA : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100011"; -- 35ºC
+	CONSTANT TEMPERATURA_ALTA  : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101000"; -- 45ºC
+BEGIN
+
+	PROCESS(Temperatura,sysClock) IS
+	BEGIN
+		IF(sysClock = '1' AND sysClock'event) THEN
+			IF(Pronto = '1') THEN
+				IF (Temperatura >= TEMPERATURA_ALTA) THEN
+					LED_Baixo <= '0';
+					LED_Medio <= '0';
+					LED_Alto  <= '1';
+				ELSIF (Temperatura < TEMPERATURA_ALTA AND Temperatura >= TEMPERATURA_MEDIA) THEN
+					LED_Baixo <= '0';
+					LED_Medio <= '1';
+					LED_Alto  <= '0'; 
+				ELSIF (Temperatura >= TEMPERATURA_BAIXA) THEN
+					LED_Baixo <= '1';
+					LED_Medio <= '0';
+					LED_Alto  <= '0';
+				ELSE
+					LED_Baixo <= '0';
+					LED_Medio <= '0';
+					LED_Alto  <= '0';
+				END IF;
+			END IF;
+		END IF;
+	END PROCESS;
+
+END structural;

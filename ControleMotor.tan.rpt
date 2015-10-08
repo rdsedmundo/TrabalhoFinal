@@ -1,0 +1,460 @@
+Classic Timing Analyzer report for ControleMotor
+Mon Nov 18 13:32:47 2013
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'sysClock'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                               ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+---------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                         ; To                                    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+---------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 12.052 ns                        ; Botao_Baixo                  ; PWM:m5|Saida                          ; --         ; sysClock ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 15.582 ns                        ; FPGA_ADCMAX1111:m2|bitConfig ; ADC_DIN                               ; sysClock   ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 4.212 ns                         ; ADC_DOUT                     ; FPGA_ADCMAX1111:m2|bitsLidos[19]      ; --         ; sysClock ; 0            ;
+; Clock Setup: 'sysClock'      ; N/A   ; None          ; 29.00 MHz ( period = 34.488 ns ) ; FPGA_ADCMAX1111:m2|indice[0] ; FPGA_ADCMAX1111:m2|estado.transfering ; sysClock   ; sysClock ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                              ;                                       ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+---------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM1270F256C5      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; sysClock        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'sysClock'                                                                                                                                                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                ; To                                                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 29.00 MHz ( period = 34.488 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 10.046 ns               ;
+; N/A                                     ; 29.43 MHz ( period = 33.976 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 9.790 ns                ;
+; N/A                                     ; 30.04 MHz ( period = 33.284 ns )                    ; FPGA_ADCMAX1111:m2|indice[18]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 9.444 ns                ;
+; N/A                                     ; 30.50 MHz ( period = 32.782 ns )                    ; FPGA_ADCMAX1111:m2|indice[17]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 30.80 MHz ( period = 32.466 ns )                    ; FPGA_ADCMAX1111:m2|indice[16]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 9.035 ns                ;
+; N/A                                     ; 31.61 MHz ( period = 31.636 ns )                    ; FPGA_ADCMAX1111:m2|indice[19]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 8.620 ns                ;
+; N/A                                     ; 32.85 MHz ( period = 30.446 ns )                    ; FPGA_ADCMAX1111:m2|indice[21]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 8.025 ns                ;
+; N/A                                     ; 33.06 MHz ( period = 30.246 ns )                    ; FPGA_ADCMAX1111:m2|indice[7]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.925 ns                ;
+; N/A                                     ; 33.31 MHz ( period = 30.024 ns )                    ; FPGA_ADCMAX1111:m2|indice[23]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.814 ns                ;
+; N/A                                     ; 33.62 MHz ( period = 29.740 ns )                    ; FPGA_ADCMAX1111:m2|indice[22]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.672 ns                ;
+; N/A                                     ; 33.82 MHz ( period = 29.572 ns )                    ; FPGA_ADCMAX1111:m2|indice[6]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.588 ns                ;
+; N/A                                     ; 34.15 MHz ( period = 29.282 ns )                    ; FPGA_ADCMAX1111:m2|indice[30]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.443 ns                ;
+; N/A                                     ; 34.20 MHz ( period = 29.244 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.424 ns                ;
+; N/A                                     ; 34.20 MHz ( period = 29.244 ns )                    ; FPGA_ADCMAX1111:m2|indice[25]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.424 ns                ;
+; N/A                                     ; 34.45 MHz ( period = 29.028 ns )                    ; FPGA_ADCMAX1111:m2|indice[28]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.316 ns                ;
+; N/A                                     ; 34.55 MHz ( period = 28.946 ns )                    ; FPGA_ADCMAX1111:m2|indice[20]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.275 ns                ;
+; N/A                                     ; 34.92 MHz ( period = 28.634 ns )                    ; FPGA_ADCMAX1111:m2|indice[31]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 7.119 ns                ;
+; N/A                                     ; 35.63 MHz ( period = 28.070 ns )                    ; FPGA_ADCMAX1111:m2|indice[5]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.837 ns                ;
+; N/A                                     ; 35.64 MHz ( period = 28.060 ns )                    ; FPGA_ADCMAX1111:m2|indice[13]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.832 ns                ;
+; N/A                                     ; 35.74 MHz ( period = 27.980 ns )                    ; FPGA_ADCMAX1111:m2|indice[9]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.792 ns                ;
+; N/A                                     ; 35.80 MHz ( period = 27.936 ns )                    ; FPGA_ADCMAX1111:m2|indice[29]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.770 ns                ;
+; N/A                                     ; 35.98 MHz ( period = 27.790 ns )                    ; FPGA_ADCMAX1111:m2|indice[15]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.697 ns                ;
+; N/A                                     ; 36.21 MHz ( period = 27.614 ns )                    ; FPGA_ADCMAX1111:m2|indice[8]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.609 ns                ;
+; N/A                                     ; 36.48 MHz ( period = 27.416 ns )                    ; FPGA_ADCMAX1111:m2|indice[24]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.510 ns                ;
+; N/A                                     ; 36.82 MHz ( period = 27.160 ns )                    ; FPGA_ADCMAX1111:m2|indice[14]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.382 ns                ;
+; N/A                                     ; 36.87 MHz ( period = 27.120 ns )                    ; FPGA_ADCMAX1111:m2|indice[10]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.362 ns                ;
+; N/A                                     ; 36.98 MHz ( period = 27.042 ns )                    ; FPGA_ADCMAX1111:m2|indice[26]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.323 ns                ;
+; N/A                                     ; 37.69 MHz ( period = 26.534 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 6.069 ns                ;
+; N/A                                     ; 38.38 MHz ( period = 26.058 ns )                    ; FPGA_ADCMAX1111:m2|indice[12]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 5.831 ns                ;
+; N/A                                     ; 38.46 MHz ( period = 25.998 ns )                    ; FPGA_ADCMAX1111:m2|indice[27]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 5.801 ns                ;
+; N/A                                     ; 38.55 MHz ( period = 25.938 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 5.771 ns                ;
+; N/A                                     ; 39.31 MHz ( period = 25.442 ns )                    ; FPGA_ADCMAX1111:m2|indice[11]                       ; FPGA_ADCMAX1111:m2|estado.transfering               ; sysClock   ; sysClock ; None                        ; None                      ; 5.523 ns                ;
+; N/A                                     ; 63.95 MHz ( period = 15.638 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[15]                    ; sysClock   ; sysClock ; None                        ; None                      ; 7.110 ns                ;
+; N/A                                     ; 66.26 MHz ( period = 15.092 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[12]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.837 ns                ;
+; N/A                                     ; 68.94 MHz ( period = 14.506 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[15]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.544 ns                ;
+; N/A                                     ; 69.35 MHz ( period = 14.420 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[19]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.501 ns                ;
+; N/A                                     ; 70.59 MHz ( period = 14.166 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[13]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 71.00 MHz ( period = 14.084 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[19]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.333 ns                ;
+; N/A                                     ; 71.02 MHz ( period = 14.081 ns )                    ; ControleMotor:m3|LED_Alto                           ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 13.372 ns               ;
+; N/A                                     ; 71.63 MHz ( period = 13.960 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[12]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.271 ns                ;
+; N/A                                     ; 72.37 MHz ( period = 13.817 ns )                    ; ControleMotor:m3|LED_Medio                          ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 13.108 ns               ;
+; N/A                                     ; 72.75 MHz ( period = 13.745 ns )                    ; ControleMotor:m3|LED_Baixo                          ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 13.036 ns               ;
+; N/A                                     ; 73.53 MHz ( period = 13.600 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|bitsLidos[15]                    ; sysClock   ; sysClock ; None                        ; None                      ; 6.091 ns                ;
+; N/A                                     ; 74.96 MHz ( period = 13.340 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[13]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.961 ns                ;
+; N/A                                     ; 74.99 MHz ( period = 13.336 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[17]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.959 ns                ;
+; N/A                                     ; 75.21 MHz ( period = 13.296 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|bitsLidos[19]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.939 ns                ;
+; N/A                                     ; 75.54 MHz ( period = 13.238 ns )                    ; PWM:m1|COUNT_aux[7]                                 ; PWM:m1|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 12.529 ns               ;
+; N/A                                     ; 75.56 MHz ( period = 13.235 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.526 ns               ;
+; N/A                                     ; 75.57 MHz ( period = 13.233 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.524 ns               ;
+; N/A                                     ; 75.59 MHz ( period = 13.229 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.520 ns               ;
+; N/A                                     ; 75.61 MHz ( period = 13.226 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.517 ns               ;
+; N/A                                     ; 76.60 MHz ( period = 13.054 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|bitsLidos[12]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.818 ns                ;
+; N/A                                     ; 76.72 MHz ( period = 13.034 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[13]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.808 ns                ;
+; N/A                                     ; 77.15 MHz ( period = 12.962 ns )                    ; PWM:m1|COUNT_aux[6]                                 ; PWM:m1|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 12.253 ns               ;
+; N/A                                     ; 77.54 MHz ( period = 12.896 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[25] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.187 ns               ;
+; N/A                                     ; 77.56 MHz ( period = 12.894 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[25] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.185 ns               ;
+; N/A                                     ; 77.58 MHz ( period = 12.890 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[25] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.181 ns               ;
+; N/A                                     ; 77.60 MHz ( period = 12.887 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[25] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 12.178 ns               ;
+; N/A                                     ; 77.70 MHz ( period = 12.870 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[14]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.726 ns                ;
+; N/A                                     ; 80.84 MHz ( period = 12.370 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[19]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.476 ns                ;
+; N/A                                     ; 80.88 MHz ( period = 12.364 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|bitsLidos[13]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.473 ns                ;
+; N/A                                     ; 80.91 MHz ( period = 12.360 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|bitsLidos[17]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.471 ns                ;
+; N/A                                     ; 80.91 MHz ( period = 12.360 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[15]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.471 ns                ;
+; N/A                                     ; 80.92 MHz ( period = 12.358 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 11.649 ns               ;
+; N/A                                     ; 80.93 MHz ( period = 12.356 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 11.647 ns               ;
+; N/A                                     ; 80.96 MHz ( period = 12.352 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 11.643 ns               ;
+; N/A                                     ; 80.98 MHz ( period = 12.349 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 11.640 ns               ;
+; N/A                                     ; 81.87 MHz ( period = 12.214 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[18]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.398 ns                ;
+; N/A                                     ; 82.45 MHz ( period = 12.128 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|bitsLidos[13]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.355 ns                ;
+; N/A                                     ; 84.19 MHz ( period = 11.878 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[18]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.230 ns                ;
+; N/A                                     ; 85.19 MHz ( period = 11.738 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[14]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.160 ns                ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|bitsLidos[12]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.107 ns                ;
+; N/A                                     ; 85.98 MHz ( period = 11.630 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|bitsLidos[16]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.106 ns                ;
+; N/A                                     ; 86.14 MHz ( period = 11.609 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[12] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.900 ns               ;
+; N/A                                     ; 86.15 MHz ( period = 11.607 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[12] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.898 ns               ;
+; N/A                                     ; 86.18 MHz ( period = 11.603 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[12] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.894 ns               ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[12] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.891 ns               ;
+; N/A                                     ; 86.91 MHz ( period = 11.506 ns )                    ; PWM:m1|COUNT_aux[9]                                 ; PWM:m1|COUNT_aux[6]                                 ; sysClock   ; sysClock ; None                        ; None                      ; 10.797 ns               ;
+; N/A                                     ; 87.40 MHz ( period = 11.442 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[14]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.012 ns                ;
+; N/A                                     ; 87.43 MHz ( period = 11.438 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[18]                    ; sysClock   ; sysClock ; None                        ; None                      ; 5.010 ns                ;
+; N/A                                     ; 87.44 MHz ( period = 11.436 ns )                    ; PWM:m5|COUNT_aux[18]                                ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 10.727 ns               ;
+; N/A                                     ; 87.75 MHz ( period = 11.396 ns )                    ; FPGA_ADCMAX1111:m2|bitsDados[2]                     ; ControleMotor:m3|LED_Baixo                          ; sysClock   ; sysClock ; None                        ; None                      ; 10.687 ns               ;
+; N/A                                     ; 88.10 MHz ( period = 11.351 ns )                    ; PWM:m1|COUNT_aux[6]                                 ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.642 ns               ;
+; N/A                                     ; 88.28 MHz ( period = 11.327 ns )                    ; PWM:m5|COUNT_aux[9]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.618 ns               ;
+; N/A                                     ; 88.79 MHz ( period = 11.262 ns )                    ; PWM:m5|COUNT_aux[17]                                ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 10.553 ns               ;
+; N/A                                     ; 89.14 MHz ( period = 11.218 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.509 ns               ;
+; N/A                                     ; 89.16 MHz ( period = 11.216 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.507 ns               ;
+; N/A                                     ; 89.19 MHz ( period = 11.212 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.503 ns               ;
+; N/A                                     ; 89.21 MHz ( period = 11.209 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 89.64 MHz ( period = 11.156 ns )                    ; FPGA_ADCMAX1111:m2|bitsDados[3]                     ; ControleMotor:m3|LED_Baixo                          ; sysClock   ; sysClock ; None                        ; None                      ; 10.447 ns               ;
+; N/A                                     ; 89.68 MHz ( period = 11.151 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.442 ns               ;
+; N/A                                     ; 89.86 MHz ( period = 11.128 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[2]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.419 ns               ;
+; N/A                                     ; 89.88 MHz ( period = 11.126 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[2]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.417 ns               ;
+; N/A                                     ; 89.91 MHz ( period = 11.122 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[2]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.413 ns               ;
+; N/A                                     ; 89.93 MHz ( period = 11.120 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[12]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.851 ns                ;
+; N/A                                     ; 89.94 MHz ( period = 11.119 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[2]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.410 ns               ;
+; N/A                                     ; 89.94 MHz ( period = 11.118 ns )                    ; FPGA_ADCMAX1111:m2|indice[1]                        ; FPGA_ADCMAX1111:m2|bitsLidos[16]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.850 ns                ;
+; N/A                                     ; 90.17 MHz ( period = 11.090 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|bitsLidos[18]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.836 ns                ;
+; N/A                                     ; 90.79 MHz ( period = 11.014 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[16]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.798 ns                ;
+; N/A                                     ; 90.89 MHz ( period = 11.002 ns )                    ; FPGA_ADCMAX1111:m2|indice[3]                        ; FPGA_ADCMAX1111:m2|bitsLidos[17]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.792 ns                ;
+; N/A                                     ; 91.18 MHz ( period = 10.967 ns )                    ; PWM:m1|COUNT_aux[9]                                 ; PWM:m1|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.258 ns               ;
+; N/A                                     ; 91.26 MHz ( period = 10.958 ns )                    ; PWM:m1|COUNT_aux[9]                                 ; PWM:m1|COUNT_aux[21]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.249 ns               ;
+; N/A                                     ; 91.45 MHz ( period = 10.935 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock     ; sysClock   ; sysClock ; None                        ; None                      ; 10.226 ns               ;
+; N/A                                     ; 91.52 MHz ( period = 10.926 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[7]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.217 ns               ;
+; N/A                                     ; 91.76 MHz ( period = 10.898 ns )                    ; FPGA_ADCMAX1111:m2|bitsLidos[18]                    ; FPGA_ADCMAX1111:m2|bitsDados[1]                     ; sysClock   ; sysClock ; None                        ; None                      ; 3.700 ns                ;
+; N/A                                     ; 91.97 MHz ( period = 10.873 ns )                    ; PWM:m1|COUNT_aux[3]                                 ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.164 ns               ;
+; N/A                                     ; 92.14 MHz ( period = 10.853 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 10.144 ns               ;
+; N/A                                     ; 92.17 MHz ( period = 10.849 ns )                    ; PWM:m1|COUNT_aux[8]                                 ; PWM:m1|COUNT_aux[6]                                 ; sysClock   ; sysClock ; None                        ; None                      ; 10.140 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; FPGA_ADCMAX1111:m2|indice[4]                        ; FPGA_ADCMAX1111:m2|bitsLidos[14]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.707 ns                ;
+; N/A                                     ; 92.53 MHz ( period = 10.807 ns )                    ; FPGA_ADCMAX1111:m2|bitsDados[1]                     ; ControleMotor:m3|LED_Baixo                          ; sysClock   ; sysClock ; None                        ; None                      ; 10.098 ns               ;
+; N/A                                     ; 92.66 MHz ( period = 10.792 ns )                    ; PWM:m5|COUNT_aux[1]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.083 ns               ;
+; N/A                                     ; 92.89 MHz ( period = 10.766 ns )                    ; PWM:m1|COUNT_aux[8]                                 ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.057 ns               ;
+; N/A                                     ; 93.18 MHz ( period = 10.732 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[20]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.023 ns               ;
+; N/A                                     ; 93.18 MHz ( period = 10.732 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[13]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.023 ns               ;
+; N/A                                     ; 93.19 MHz ( period = 10.731 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[21]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.022 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[19]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.22 MHz ( period = 10.727 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[11]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.018 ns               ;
+; N/A                                     ; 93.27 MHz ( period = 10.721 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 10.012 ns               ;
+; N/A                                     ; 93.29 MHz ( period = 10.719 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[10]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.010 ns               ;
+; N/A                                     ; 93.32 MHz ( period = 10.716 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[12]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.007 ns               ;
+; N/A                                     ; 93.34 MHz ( period = 10.714 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[5]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 10.005 ns               ;
+; N/A                                     ; 93.35 MHz ( period = 10.712 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[22]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.003 ns               ;
+; N/A                                     ; 93.36 MHz ( period = 10.711 ns )                    ; PWM:m1|COUNT_aux[4]                                 ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 10.002 ns               ;
+; N/A                                     ; 93.39 MHz ( period = 10.708 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[6]                                 ; sysClock   ; sysClock ; None                        ; None                      ; 9.999 ns                ;
+; N/A                                     ; 93.41 MHz ( period = 10.706 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.997 ns                ;
+; N/A                                     ; 93.46 MHz ( period = 10.700 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[20]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.991 ns                ;
+; N/A                                     ; 93.46 MHz ( period = 10.700 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[13]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.991 ns                ;
+; N/A                                     ; 93.47 MHz ( period = 10.699 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[24]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.990 ns                ;
+; N/A                                     ; 93.47 MHz ( period = 10.699 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[21]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.990 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.698 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[25]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.989 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.697 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[19]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.988 ns                ;
+; N/A                                     ; 93.50 MHz ( period = 10.695 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[11]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.986 ns                ;
+; N/A                                     ; 93.57 MHz ( period = 10.687 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[10]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.978 ns                ;
+; N/A                                     ; 93.60 MHz ( period = 10.684 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[12]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.975 ns                ;
+; N/A                                     ; 93.63 MHz ( period = 10.680 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[22]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.971 ns                ;
+; N/A                                     ; 93.63 MHz ( period = 10.680 ns )                    ; PWM:m5|COUNT_aux[5]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.971 ns                ;
+; N/A                                     ; 93.65 MHz ( period = 10.678 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[16]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.630 ns                ;
+; N/A                                     ; 93.67 MHz ( period = 10.676 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[6]                                 ; sysClock   ; sysClock ; None                        ; None                      ; 9.967 ns                ;
+; N/A                                     ; 93.69 MHz ( period = 10.674 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.965 ns                ;
+; N/A                                     ; 93.75 MHz ( period = 10.667 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[24]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.958 ns                ;
+; N/A                                     ; 93.76 MHz ( period = 10.666 ns )                    ; PWM:m5|COUNT_aux[7]                                 ; PWM:m5|COUNT_aux[25]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.957 ns                ;
+; N/A                                     ; 93.76 MHz ( period = 10.666 ns )                    ; FPGA_ADCMAX1111:m2|indice[2]                        ; FPGA_ADCMAX1111:m2|bitsLidos[17]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.624 ns                ;
+; N/A                                     ; 93.84 MHz ( period = 10.656 ns )                    ; PWM:m5|COUNT_aux[23]                                ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 9.947 ns                ;
+; N/A                                     ; 93.92 MHz ( period = 10.647 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 9.938 ns                ;
+; N/A                                     ; 94.03 MHz ( period = 10.635 ns )                    ; PWM:m1|COUNT_aux[7]                                 ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.926 ns                ;
+; N/A                                     ; 94.06 MHz ( period = 10.631 ns )                    ; PWM:m1|COUNT_aux[2]                                 ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.922 ns                ;
+; N/A                                     ; 94.21 MHz ( period = 10.615 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[20]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.906 ns                ;
+; N/A                                     ; 94.21 MHz ( period = 10.615 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[13]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.906 ns                ;
+; N/A                                     ; 94.22 MHz ( period = 10.614 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[21]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.905 ns                ;
+; N/A                                     ; 94.23 MHz ( period = 10.612 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[19]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.903 ns                ;
+; N/A                                     ; 94.25 MHz ( period = 10.610 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[11]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.901 ns                ;
+; N/A                                     ; 94.28 MHz ( period = 10.607 ns )                    ; PWM:m5|COUNT_aux[3]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.898 ns                ;
+; N/A                                     ; 94.32 MHz ( period = 10.602 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[10]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.893 ns                ;
+; N/A                                     ; 94.35 MHz ( period = 10.599 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[12]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.890 ns                ;
+; N/A                                     ; 94.38 MHz ( period = 10.596 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[25] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock     ; sysClock   ; sysClock ; None                        ; None                      ; 9.887 ns                ;
+; N/A                                     ; 94.38 MHz ( period = 10.595 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[22]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.886 ns                ;
+; N/A                                     ; 94.41 MHz ( period = 10.592 ns )                    ; PWM:m5|COUNT_aux[0]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.883 ns                ;
+; N/A                                     ; 94.42 MHz ( period = 10.591 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[6]                                 ; sysClock   ; sysClock ; None                        ; None                      ; 9.882 ns                ;
+; N/A                                     ; 94.44 MHz ( period = 10.589 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.880 ns                ;
+; N/A                                     ; 94.46 MHz ( period = 10.587 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[25] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[7]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.878 ns                ;
+; N/A                                     ; 94.50 MHz ( period = 10.582 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[24]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.873 ns                ;
+; N/A                                     ; 94.50 MHz ( period = 10.582 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[5]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.873 ns                ;
+; N/A                                     ; 94.51 MHz ( period = 10.581 ns )                    ; PWM:m5|COUNT_aux[6]                                 ; PWM:m5|COUNT_aux[25]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.872 ns                ;
+; N/A                                     ; 94.54 MHz ( period = 10.578 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; sysClock   ; sysClock ; None                        ; None                      ; 9.869 ns                ;
+; N/A                                     ; 94.54 MHz ( period = 10.578 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[2]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 9.869 ns                ;
+; N/A                                     ; 94.92 MHz ( period = 10.535 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[23] ; sysClock   ; sysClock ; None                        ; None                      ; 9.826 ns                ;
+; N/A                                     ; 94.93 MHz ( period = 10.534 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.825 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; PWM:m5|COUNT_aux[22]                                ; PWM:m5|COUNT_aux[25]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.97 MHz ( period = 10.530 ns )                    ; PWM:m5|COUNT_aux[18]                                ; PWM:m5|COUNT_aux[25]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.821 ns                ;
+; N/A                                     ; 94.98 MHz ( period = 10.528 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.819 ns                ;
+; N/A                                     ; 95.01 MHz ( period = 10.525 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.816 ns                ;
+; N/A                                     ; 95.04 MHz ( period = 10.522 ns )                    ; PWM:m5|COUNT_aux[22]                                ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 9.813 ns                ;
+; N/A                                     ; 95.52 MHz ( period = 10.469 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 9.760 ns                ;
+; N/A                                     ; 95.69 MHz ( period = 10.450 ns )                    ; FPGA_ADCMAX1111:m2|bitsDados[0]                     ; ControleMotor:m3|LED_Baixo                          ; sysClock   ; sysClock ; None                        ; None                      ; 9.741 ns                ;
+; N/A                                     ; 95.78 MHz ( period = 10.441 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[16] ; sysClock   ; sysClock ; None                        ; None                      ; 9.732 ns                ;
+; N/A                                     ; 95.79 MHz ( period = 10.439 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[5]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; sysClock   ; sysClock ; None                        ; None                      ; 9.730 ns                ;
+; N/A                                     ; 95.95 MHz ( period = 10.422 ns )                    ; PWM:m5|COUNT_aux[9]                                 ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 9.713 ns                ;
+; N/A                                     ; 96.04 MHz ( period = 10.412 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[14] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[3]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.703 ns                ;
+; N/A                                     ; 96.06 MHz ( period = 10.410 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[14] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.701 ns                ;
+; N/A                                     ; 96.10 MHz ( period = 10.406 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[14] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.697 ns                ;
+; N/A                                     ; 96.13 MHz ( period = 10.403 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[14] ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; sysClock   ; sysClock ; None                        ; None                      ; 9.694 ns                ;
+; N/A                                     ; 96.19 MHz ( period = 10.396 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[4]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[24] ; sysClock   ; sysClock ; None                        ; None                      ; 9.687 ns                ;
+; N/A                                     ; 96.19 MHz ( period = 10.396 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[5]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[23] ; sysClock   ; sysClock ; None                        ; None                      ; 9.687 ns                ;
+; N/A                                     ; 96.39 MHz ( period = 10.374 ns )                    ; PWM:m5|COUNT_aux[10]                                ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 9.665 ns                ;
+; N/A                                     ; 96.41 MHz ( period = 10.372 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; sysClock   ; sysClock ; None                        ; None                      ; 9.663 ns                ;
+; N/A                                     ; 96.46 MHz ( period = 10.367 ns )                    ; PWM:m1|COUNT_aux[14]                                ; PWM:m1|COUNT_aux[23]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.658 ns                ;
+; N/A                                     ; 96.52 MHz ( period = 10.361 ns )                    ; PWM:m5|COUNT_aux[8]                                 ; PWM:m5|Saida                                        ; sysClock   ; sysClock ; None                        ; None                      ; 9.652 ns                ;
+; N/A                                     ; 96.81 MHz ( period = 10.330 ns )                    ; PWM:m5|COUNT_aux[2]                                 ; PWM:m5|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.621 ns                ;
+; N/A                                     ; 96.81 MHz ( period = 10.329 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[1]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[23] ; sysClock   ; sysClock ; None                        ; None                      ; 9.620 ns                ;
+; N/A                                     ; 96.86 MHz ( period = 10.324 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[8]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 9.615 ns                ;
+; N/A                                     ; 96.99 MHz ( period = 10.310 ns )                    ; PWM:m1|COUNT_aux[8]                                 ; PWM:m1|COUNT_aux[18]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.601 ns                ;
+; N/A                                     ; 97.02 MHz ( period = 10.307 ns )                    ; FPGA_ADCMAX1111:m2|bitsDados[1]                     ; ControleMotor:m3|LED_Medio                          ; sysClock   ; sysClock ; None                        ; None                      ; 9.598 ns                ;
+; N/A                                     ; 97.03 MHz ( period = 10.306 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|bitsLidos[19]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.444 ns                ;
+; N/A                                     ; 97.06 MHz ( period = 10.303 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[2]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[26] ; sysClock   ; sysClock ; None                        ; None                      ; 9.594 ns                ;
+; N/A                                     ; 97.07 MHz ( period = 10.302 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[5]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[16] ; sysClock   ; sysClock ; None                        ; None                      ; 9.593 ns                ;
+; N/A                                     ; 97.08 MHz ( period = 10.301 ns )                    ; PWM:m1|COUNT_aux[8]                                 ; PWM:m1|COUNT_aux[21]                                ; sysClock   ; sysClock ; None                        ; None                      ; 9.592 ns                ;
+; N/A                                     ; 97.13 MHz ( period = 10.296 ns )                    ; FPGA_ADCMAX1111:m2|indice[0]                        ; FPGA_ADCMAX1111:m2|bitsLidos[15]                    ; sysClock   ; sysClock ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 97.13 MHz ( period = 10.295 ns )                    ; FPGA_ADCMAX1111:m2|bitsDados[2]                     ; ControleMotor:m3|LED_Medio                          ; sysClock   ; sysClock ; None                        ; None                      ; 9.586 ns                ;
+; N/A                                     ; 97.16 MHz ( period = 10.292 ns )                    ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[9]  ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|counter[22] ; sysClock   ; sysClock ; None                        ; None                      ; 9.583 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                     ;                                                     ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; tsu                                                                                           ;
++-------+--------------+------------+-------------+----------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To                               ; To Clock ;
++-------+--------------+------------+-------------+----------------------------------+----------+
+; N/A   ; None         ; 12.052 ns  ; Botao_Baixo ; PWM:m5|Saida                     ; sysClock ;
+; N/A   ; None         ; 11.796 ns  ; Botao_Alto  ; PWM:m5|Saida                     ; sysClock ;
+; N/A   ; None         ; 11.127 ns  ; Botao_Medio ; PWM:m5|Saida                     ; sysClock ;
+; N/A   ; None         ; -2.593 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[16] ; sysClock ;
+; N/A   ; None         ; -2.594 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[12] ; sysClock ;
+; N/A   ; None         ; -2.601 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[13] ; sysClock ;
+; N/A   ; None         ; -2.602 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[17] ; sysClock ;
+; N/A   ; None         ; -3.100 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[15] ; sysClock ;
+; N/A   ; None         ; -3.310 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[14] ; sysClock ;
+; N/A   ; None         ; -3.311 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[18] ; sysClock ;
+; N/A   ; None         ; -3.658 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[19] ; sysClock ;
++-------+--------------+------------+-------------+----------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                          ;
++-------+--------------+------------+-------------------------------------------------+-----------+------------+
+; Slack ; Required tco ; Actual tco ; From                                            ; To        ; From Clock ;
++-------+--------------+------------+-------------------------------------------------+-----------+------------+
+; N/A   ; None         ; 15.582 ns  ; FPGA_ADCMAX1111:m2|bitConfig                    ; ADC_DIN   ; sysClock   ;
+; N/A   ; None         ; 9.848 ns   ; FPGA_ADCMAX1111:m2|nivelCS                      ; ADC_CSN   ; sysClock   ;
+; N/A   ; None         ; 9.783 ns   ; PWM:m5|Saida                                    ; Pulso     ; sysClock   ;
+; N/A   ; None         ; 9.058 ns   ; ControleMotor:m3|LED_Baixo                      ; LED_Baixo ; sysClock   ;
+; N/A   ; None         ; 9.047 ns   ; ControleMotor:m3|LED_Alto                       ; LED_Alto  ; sysClock   ;
+; N/A   ; None         ; 9.033 ns   ; ControleMotor:m3|LED_Medio                      ; LED_Medio ; sysClock   ;
+; N/A   ; None         ; 8.566 ns   ; FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock ; ADC_CLK   ; sysClock   ;
+; N/A   ; None         ; 8.470 ns   ; FPGA_ADCMAX1111:m2|nivelStrobe                  ; ADC_SSTRB ; sysClock   ;
++-------+--------------+------------+-------------------------------------------------+-----------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; th                                                                                                  ;
++---------------+-------------+-----------+-------------+----------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From        ; To                               ; To Clock ;
++---------------+-------------+-----------+-------------+----------------------------------+----------+
+; N/A           ; None        ; 4.212 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[19] ; sysClock ;
+; N/A           ; None        ; 3.865 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[18] ; sysClock ;
+; N/A           ; None        ; 3.864 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[14] ; sysClock ;
+; N/A           ; None        ; 3.654 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[15] ; sysClock ;
+; N/A           ; None        ; 3.156 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[17] ; sysClock ;
+; N/A           ; None        ; 3.155 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[13] ; sysClock ;
+; N/A           ; None        ; 3.148 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[12] ; sysClock ;
+; N/A           ; None        ; 3.147 ns  ; ADC_DOUT    ; FPGA_ADCMAX1111:m2|bitsLidos[16] ; sysClock ;
+; N/A           ; None        ; -5.097 ns ; Botao_Medio ; PWM:m5|Saida                     ; sysClock ;
+; N/A           ; None        ; -5.259 ns ; Botao_Baixo ; PWM:m5|Saida                     ; sysClock ;
+; N/A           ; None        ; -5.729 ns ; Botao_Alto  ; PWM:m5|Saida                     ; sysClock ;
++---------------+-------------+-----------+-------------+----------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Mon Nov 18 13:32:47 2013
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off TrabalhoFinal -c ControleMotor
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "sysClock" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock" as buffer
+Info: Clock "sysClock" has Internal fmax of 29.0 MHz between source register "FPGA_ADCMAX1111:m2|indice[0]" and destination register "FPGA_ADCMAX1111:m2|estado.transfering" (period= 34.488 ns)
+    Info: + Longest register to register delay is 10.046 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X10_Y10_N3; Fanout = 9; REG Node = 'FPGA_ADCMAX1111:m2|indice[0]'
+        Info: 2: + IC(2.700 ns) + CELL(0.511 ns) = 3.211 ns; Loc. = LC_X8_Y6_N6; Fanout = 3; COMB Node = 'FPGA_ADCMAX1111:m2|Decoder0~0'
+        Info: 3: + IC(2.401 ns) + CELL(0.200 ns) = 5.812 ns; Loc. = LC_X10_Y10_N1; Fanout = 1; COMB Node = 'FPGA_ADCMAX1111:m2|Equal0~1'
+        Info: 4: + IC(2.404 ns) + CELL(0.200 ns) = 8.416 ns; Loc. = LC_X13_Y9_N3; Fanout = 1; COMB Node = 'FPGA_ADCMAX1111:m2|Equal0~9'
+        Info: 5: + IC(0.305 ns) + CELL(0.200 ns) = 8.921 ns; Loc. = LC_X13_Y9_N4; Fanout = 1; COMB Node = 'FPGA_ADCMAX1111:m2|estado~7'
+        Info: 6: + IC(0.534 ns) + CELL(0.591 ns) = 10.046 ns; Loc. = LC_X13_Y9_N5; Fanout = 37; REG Node = 'FPGA_ADCMAX1111:m2|estado.transfering'
+        Info: Total cell delay = 1.702 ns ( 16.94 % )
+        Info: Total interconnect delay = 8.344 ns ( 83.06 % )
+    Info: - Smallest clock skew is -6.489 ns
+        Info: + Shortest clock path from clock "sysClock" to destination register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 102; CLK Node = 'sysClock'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X13_Y9_N5; Fanout = 37; REG Node = 'FPGA_ADCMAX1111:m2|estado.transfering'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: - Longest clock path from clock "sysClock" to source register is 10.308 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 102; CLK Node = 'sysClock'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X14_Y8_N5; Fanout = 43; REG Node = 'FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock'
+            Info: 3: + IC(5.195 ns) + CELL(0.918 ns) = 10.308 ns; Loc. = LC_X10_Y10_N3; Fanout = 9; REG Node = 'FPGA_ADCMAX1111:m2|indice[0]'
+            Info: Total cell delay = 3.375 ns ( 32.74 % )
+            Info: Total interconnect delay = 6.933 ns ( 67.26 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "PWM:m5|Saida" (data pin = "Botao_Baixo", clock pin = "sysClock") is 12.052 ns
+    Info: + Longest pin to register delay is 15.538 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_M9; Fanout = 8; PIN Node = 'Botao_Baixo'
+        Info: 2: + IC(3.303 ns) + CELL(0.511 ns) = 4.946 ns; Loc. = LC_X12_Y2_N0; Fanout = 1; COMB Node = 'PulseProcessor:m4|Duty[20]~2'
+        Info: 3: + IC(0.305 ns) + CELL(0.200 ns) = 5.451 ns; Loc. = LC_X12_Y2_N1; Fanout = 3; COMB Node = 'PulseProcessor:m4|Duty[20]~3'
+        Info: 4: + IC(3.438 ns) + CELL(0.511 ns) = 9.400 ns; Loc. = LC_X10_Y7_N5; Fanout = 2; COMB Node = 'PWM:m5|LessThan0~3'
+        Info: 5: + IC(1.922 ns) + CELL(0.200 ns) = 11.522 ns; Loc. = LC_X13_Y6_N4; Fanout = 1; COMB Node = 'PWM:m5|LessThan0~5'
+        Info: 6: + IC(2.415 ns) + CELL(0.200 ns) = 14.137 ns; Loc. = LC_X9_Y7_N1; Fanout = 1; COMB Node = 'PWM:m5|LessThan0~19'
+        Info: 7: + IC(0.305 ns) + CELL(0.200 ns) = 14.642 ns; Loc. = LC_X9_Y7_N2; Fanout = 1; COMB Node = 'PWM:m5|LessThan0~26'
+        Info: 8: + IC(0.305 ns) + CELL(0.591 ns) = 15.538 ns; Loc. = LC_X9_Y7_N3; Fanout = 1; REG Node = 'PWM:m5|Saida'
+        Info: Total cell delay = 3.545 ns ( 22.82 % )
+        Info: Total interconnect delay = 11.993 ns ( 77.18 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "sysClock" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 102; CLK Node = 'sysClock'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X9_Y7_N3; Fanout = 1; REG Node = 'PWM:m5|Saida'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+Info: tco from clock "sysClock" to destination pin "ADC_DIN" through register "FPGA_ADCMAX1111:m2|bitConfig" is 15.582 ns
+    Info: + Longest clock path from clock "sysClock" to source register is 10.308 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 102; CLK Node = 'sysClock'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X14_Y8_N5; Fanout = 43; REG Node = 'FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock'
+        Info: 3: + IC(5.195 ns) + CELL(0.918 ns) = 10.308 ns; Loc. = LC_X9_Y8_N1; Fanout = 1; REG Node = 'FPGA_ADCMAX1111:m2|bitConfig'
+        Info: Total cell delay = 3.375 ns ( 32.74 % )
+        Info: Total interconnect delay = 6.933 ns ( 67.26 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.898 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y8_N1; Fanout = 1; REG Node = 'FPGA_ADCMAX1111:m2|bitConfig'
+        Info: 2: + IC(2.576 ns) + CELL(2.322 ns) = 4.898 ns; Loc. = PIN_B12; Fanout = 0; PIN Node = 'ADC_DIN'
+        Info: Total cell delay = 2.322 ns ( 47.41 % )
+        Info: Total interconnect delay = 2.576 ns ( 52.59 % )
+Info: th for register "FPGA_ADCMAX1111:m2|bitsLidos[19]" (data pin = "ADC_DOUT", clock pin = "sysClock") is 4.212 ns
+    Info: + Longest clock path from clock "sysClock" to destination register is 10.308 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 102; CLK Node = 'sysClock'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X14_Y8_N5; Fanout = 43; REG Node = 'FPGA_ADCMAX1111:m2|CLOCK_GENERATOR:clk1|inClock'
+        Info: 3: + IC(5.195 ns) + CELL(0.918 ns) = 10.308 ns; Loc. = LC_X9_Y9_N0; Fanout = 2; REG Node = 'FPGA_ADCMAX1111:m2|bitsLidos[19]'
+        Info: Total cell delay = 3.375 ns ( 32.74 % )
+        Info: Total interconnect delay = 6.933 ns ( 67.26 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 6.317 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_A11; Fanout = 8; PIN Node = 'ADC_DOUT'
+        Info: 2: + IC(4.594 ns) + CELL(0.591 ns) = 6.317 ns; Loc. = LC_X9_Y9_N0; Fanout = 2; REG Node = 'FPGA_ADCMAX1111:m2|bitsLidos[19]'
+        Info: Total cell delay = 1.723 ns ( 27.28 % )
+        Info: Total interconnect delay = 4.594 ns ( 72.72 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 165 megabytes
+    Info: Processing ended: Mon Nov 18 13:32:48 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
